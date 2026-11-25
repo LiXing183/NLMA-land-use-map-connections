@@ -2,7 +2,9 @@
 
 A QGIS plugin for adding Taiwan NLMA urban planning and national park land-use zoning maps as XYZ layers, checking connections, and refreshing service tokens when needed.
 
-**Version:** 1.2.2 · **QGIS metadata compatibility:** 3.24–4.2.x · **License:** GPL-2.0-or-later · **Status:** Non-experimental
+**Version:** 1.2.3 · **QGIS metadata compatibility:** 3.24–4.x (Qt6 supported) · **License:** GPL-2.0-or-later · **Status:** Non-experimental
+
+本外掛透過 Claude Code 製作。This plugin was made with Claude Code.
 
 ## 功能 / Features
 
@@ -47,7 +49,7 @@ Data source: **內政部國土管理署 / National Land Management Agency, Taiwa
 - 外掛不會繞過網站驗證或存取限制。連線失敗時請查看 QGIS 訊息及官方圖台；尚未成功加入的圖層需在連線恢復後手動重試。
 - XYZ 圖磚為影像資料；本外掛不提供向量分區下載、地籍查詢或法定界線判定。
 - 連線 token 可能隨圖層來源儲存在 QGIS 專案中；分享專案前請注意連線資訊可能外流或過期。外掛日誌不會主動輸出 token。
-- QGIS 3.40.6（Linux 無顯示器模式）通過 7 項自動測試，使用本地測試圖磚；不代表官方圖台連線已由該環境驗證。使用者已在 QGIS 4.2.3 回報可用。其他版本及作業系統未逐一驗證；metadata 版本範圍不代表每個版本皆已測試。
+- QGIS 3.40.6（Linux 無顯示器模式）通過 7 項自動測試，使用本地測試圖磚；不代表官方圖台連線已由該環境驗證。使用者已在 QGIS 4.2.3 回報可用。1.2.3 將宣告範圍擴大至所有 QGIS 4.x 以便在 QGIS 4.4 安裝，功能未變；維護者已於 Windows 11／QGIS 4.4.0（Qt 6.11.3、Python 3.12）安裝並測試可正常使用。其他版本及作業系統未逐一驗證；metadata 版本範圍不代表每個版本皆已測試。
 
 ## 問題回報 / Issues
 

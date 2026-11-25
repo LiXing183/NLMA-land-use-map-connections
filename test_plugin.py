@@ -32,8 +32,8 @@ class Tests(unittest.TestCase):
         self.plugin.unload()
         QgsProject.instance().clear()
     def tile(self):
-        im = QImage(256,256,QImage.Format_ARGB32); im.fill(0xff006934)
-        buf = QBuffer(); buf.open(QIODevice.WriteOnly); im.save(buf,'PNG')
+        im = QImage(256,256,QImage.Format.Format_ARGB32); im.fill(0xff006934)
+        buf = QBuffer(); buf.open(QIODevice.OpenModeFlag.WriteOnly); im.save(buf,'PNG')
         return bytes(buf.data())
     def info(self):
         return {'tileInfo':{'rows':256,'cols':256,'origin':{'x':-20037508.342789244,'y':20037508.342789244},'spatialReference':{'wkid':3857},'lods':[{'level':z,'resolution':156543.03392804097/2**z} for z in range(5,8)]}}

@@ -39,7 +39,7 @@ class Plugin:
         self.timer.timeout.connect(self.check)
 
     def initGui(self):
-        icon = QIcon(str(Path(__file__).with_name("logoico.png")))
+        icon = QIcon(str(Path(__file__).with_name("icon.svg")))
         self.action = QAction(icon, '立即更新支援圖層連線', self.iface.mainWindow())
         self.action.triggered.connect(self.manual)
         self.iface.addPluginToMenu(TITLE, self.action)
@@ -84,9 +84,9 @@ class Plugin:
         if not self.layers():
             rasters = [layer for layer in QgsProject.instance().mapLayers().values() if isinstance(layer, QgsRasterLayer)]
             xyz = sum(layer.providerType() == 'wms' and read_uri(layer.source()).param('type').lower() == 'xyz' for layer in rasters)
-            self.log('v1.2.2 未辨識到目標：目前 %d 個影像圖層、%d 個 XYZ 圖層。可從選單加入都市計畫或國家公園使用分區。' % (len(rasters), xyz), True)
+            self.log('v1.2.3 未辨識到目標：目前 %d 個影像圖層、%d 個 XYZ 圖層。可從選單加入都市計畫或國家公園使用分區。' % (len(rasters), xyz), True)
         else:
-            self.log('v1.2.2 已辨識 %d 個支援圖層，開始檢查連線。' % len(self.layers()))
+            self.log('v1.2.3 已辨識 %d 個支援圖層，開始檢查連線。' % len(self.layers()))
             self.check(force=True)
 
     def project_read(self, *args):
